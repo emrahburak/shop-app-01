@@ -1,0 +1,16 @@
+
+
+.product-card button {
+    display: none;
+    transition: display 0.3s ease; /* Opaklık üzerinde geçiş efekti */
+}
+
+.product-card:hover button {
+    display: inline-block; /* Butonu görünür hale getir */
+    transition: display 0.8s ease; /* Butonun görünürlüğünde geçiş efekti */
+}
+
+.product-card:hover span {
+    display: none;
+    transition: display 0.3s ease; /* Fiyatın kaybolma efekti */
+}

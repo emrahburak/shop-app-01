@@ -1,0 +1,11 @@
+<div class="w-80 mb-8 product-card cursor-pointer">
+  <img class="transition ease-in-out  duration-300  w-full h-80  hover:translate-y-2 rounded-sm" style="background-color: #f7f7f7;"
+    src="{{productDetail.photo}}" alt="">
+  <div class="flex justify-between align-middle mt-5">
+    <p> {{productDetail.name}}</p>
+    <div>
+      <span>{{ productDetail.price | currency}}</span>
+      <button>Sepete Ekle</button>
+    </div>
+  </div>
+</div>
