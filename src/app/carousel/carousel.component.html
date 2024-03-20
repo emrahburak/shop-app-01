@@ -1,32 +1,10 @@
-  <div class="w-full mt-7 lg:flex justify-center align-middle" style="background-color: #f7f7f7;">
-    <div class="max-w-screen-lg py-8">
-      <owl-carousel-o [options]="customOptions">
-        <ng-template carouselSlide>
-          <div class="slide  h-80  pt-7">
-            <img class="max-w-32" src="../../assets/images/no-test-animal.png" alt="img 1" />
-            <p>Lorem ipsum dolor sit.</p>
-          </div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="slide  h-80  pt-7">
-            <img class="max-w-32" src="../../assets/images/with-water.png" alt="img 2" />
-            <p>Lorem, ipsum.</p>
-          </div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="slide  h-80  pt-7">
-            <img class="max-w-32" src="../../assets/images/dermological.png" alt="img 3" />
-            <p>Lorem ipsum dolor sit.</p>
-          </div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="slide  h-80  pt-7">
-            <img class="max-w-32" src="../../assets/images/ph-friendly.png" alt="img 4" />
-            <p>Lorem, ipsum dolor.</p>
-          </div>
-        </ng-template>
-      </owl-carousel-o>
-
+<div class="w-full h-fit mt-7 lg:flex justify-center align-middle" style="background-color: #f7f7f7;">
+  <div class="max-w-screen-lg py-8 flex align-middle gap-10">
+    <div *ngFor="let slide of slides" class="h-80 pt-7">
+      <img class="max-w-32" [src]="slide.src" alt="Description of the image" />
+      <p>Lorem ipsum dolor sit.</p>
     </div>
-
+    
   </div>
+
+</div>

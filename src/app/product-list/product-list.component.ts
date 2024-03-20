@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 import { Product } from '../product';
 @Component({
   selector: 'app-product-list',
@@ -7,16 +7,8 @@ import { Product } from '../product';
 })
 export class ProductListComponent {
 
+  @Input() isStore = false
 
-
-  product: Product = {
-    id: 999,
-    name: "test product",
-    price: 99,
-    description: 'lorem sit amet',
-    quantity: 7,
-    photo: '../../assets/images/product-01.jpg'
-  }
 
   productList: Product[] = [
     {

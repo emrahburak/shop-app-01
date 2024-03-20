@@ -11,11 +11,14 @@ import { BlogComponent } from './blog/blog.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { SlideComponent } from './slide/slide.component';
 import { FooterComponent } from './footer/footer.component';
-import { CarouselModule } from 'ngx-owl-carousel-o';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { CardComponent } from './card/card.component';
+import { BlogDetailComponent } from './blog-detail/blog-detail.component';
+import * as $ from "jquery";
+import { MatIconModule } from '@angular/material/icon';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +34,14 @@ import { CardComponent } from './card/card.component';
     CarouselComponent,
     ProductListComponent,
     ProductDetailComponent,
-    CardComponent
+    CardComponent,
+    BlogDetailComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CarouselModule
+    MatIconModule,
   ],
   providers: [
     provideClientHydration()

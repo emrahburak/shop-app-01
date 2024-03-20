@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-carousel',
@@ -7,29 +6,13 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrl: './carousel.component.css'
 })
 export class CarouselComponent {
-  customOptions: OwlOptions = {
-    loop: true,
-    mouseDrag: true,
-    touchDrag: false,
-    pullDrag: true,
-    dots: false,
-    navSpeed: 400,
-    navText: ['&#8249', '&#8250;'],
-    responsive: {
-      0: {
-        items: 1
-      },
-      400: {
-        items: 2
-      },
-      760: {
-        items: 3
-      },
-      1000: {
-        items: 4
-      }
-    },
-    nav: true
-  }
+
+  slides = [
+    { src: '../../assets/images/no-test-animal.png', alt: 'Image 1' },
+    { src: '../../assets/images/with-water.png', alt: 'Image 2' },
+    { src: '../../assets/images/dermological.png', alt: 'Image 3' },
+    { src: '../../assets/images/ph-friendly.png', alt: 'Image 3' }
+  ];
+
 
 }

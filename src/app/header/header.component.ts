@@ -7,7 +7,7 @@ import { Component,Input } from '@angular/core';
 })
 export class HeaderComponent {
 
-
+  @Input() displayAuth: boolean |undefined
 
   onHederPositionChange() {
     console.log("header posisyonu değişti")

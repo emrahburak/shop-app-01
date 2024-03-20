@@ -1,1 +1,5 @@
-<p>blog works!</p>
+<section class="flex align-middle justify-center my-20">
+  <div class="grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 gap-3 lg:max-w-screen-2xl md:max-w-screen-md sm:max-w-screen-sm">
+    <app-card *ngFor="let blog of blogList" [blog]="blog"></app-card>
+  </div>
+</section>

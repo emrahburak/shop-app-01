@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Output } from '@angular/core';
 
 @Component({
   selector: 'app-store',
@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './store.component.css'
 })
 export class StoreComponent {
+
+  @Output() isStore = true
+
 
 }
