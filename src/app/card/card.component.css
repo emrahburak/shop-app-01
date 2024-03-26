@@ -1,16 +1,60 @@
 
 
 .product-card button {
-    display: none;
-    transition: display 0.3s ease; /* Opaklık üzerinde geçiş efekti */
+    position: relative;
+    width: 30%;
+    height: 30px;
+    overflow: hidden;
+    padding: .25rem;
+
 }
 
-.product-card:hover button {
-    display: inline-block; /* Butonu görünür hale getir */
-    transition: display 0.8s ease; /* Butonun görünürlüğünde geçiş efekti */
+.product-card button::after {
+    content: attr(data-price);
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    bottom: 0;
+    transition: left 450ms ease-in-out;
 }
 
-.product-card:hover span {
-    display: none;
-    transition: display 0.3s ease; /* Fiyatın kaybolma efekti */
+.product-card button::before {
+    content: attr(data-hover);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: top 450ms ease-in-out;
+    z-index: 10;
+    color: black;
+    font-weight: 400;
+    background-image: linear-gradient(to top, #CFD8DC 50%, transparent 50%);
+    border-radius: 20%;
+
+}
+
+.product-card:hover button::before {
+    top: 10%;
+}
+
+.product-card:hover button::after {
+    left: 100%;
+}
+
+
+.blog-card {
+    position: relative;
+    cursor: pointer;
+    width: 20rem;
+    height: 20rem;
+}
+
+.blog-card .blog-date {
+    position: absolute;
+    right: 0;
+    padding: .75rem;
+    z-index: 5;
+    font-weight: 300;
+
 }

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +21,11 @@ import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import * as $ from "jquery";
 import { MatIconModule } from '@angular/material/icon';
 import { AuthComponent } from './auth/auth.component';
+import { CartComponent } from './cart/cart.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+
 
 @NgModule({
   declarations: [
@@ -37,11 +44,17 @@ import { AuthComponent } from './auth/auth.component';
     CardComponent,
     BlogDetailComponent,
     AuthComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatIconModule,
+    FontAwesomeModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService,{dataEncapsulation:false}
+    )
   ],
   providers: [
     provideClientHydration()

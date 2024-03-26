@@ -1,4 +1,5 @@
 import { Component,OnInit } from '@angular/core';
+import {faLock} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-auth',
@@ -6,5 +7,6 @@ import { Component,OnInit } from '@angular/core';
   styleUrl: './auth.component.css'
 })
 export class AuthComponent {
+  faLock = faLock;
 
 }

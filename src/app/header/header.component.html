@@ -8,7 +8,8 @@
     <li class="self-center hover:bg-red-50 rounded-md p-2"><a routerLink="/contact-us">Contact Us</a></li>
   </ul>
 
-  <div [ngClass]="{'visible':!displayAuth, 'invisible':displayAuth}">
+  <div [ngClass]="{'visible':!displayAuth, 'invisible':displayAuth}" class="flex gap-4 align-middle h-full justify-between py-6 mr-10">
     <app-auth></app-auth>
+    <app-cart></app-cart>
   </div>
 </nav>

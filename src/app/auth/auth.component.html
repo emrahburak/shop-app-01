@@ -1,1 +1,90 @@
-<p>auth works!</p>
+<div class="popup-container flex gap-2 cursor-pointer">
+  <label for="auth-popup" class="btn">
+    <fa-icon class="text-xl" [icon]="faLock"></fa-icon>
+    Login
+  </label>
+  <input type="checkbox" name="" id="auth-popup">
+  <div class="popup ">
+    <label for="auth-popup" class="absolute top-0 left-0 w-full h-full cursor-pointer"></label>
+    <div class="inner shadow-md w-2/6 border  pl-10 pr-10">
+      <nav id="tab-nav" class="flex flex-row align-middle justify-between">
+        <label for="tab-1" class="text-gray-600 py-4 px-6 block  font-medium ">
+          Login
+        </label>
+        <input type="radio" name="tab" id="tab-1" checked>
+        <label for="tab-2" class="text-gray-600 py-4 px-6 block ">
+          Register
+        </label>
+        <input type="radio" name="tab" id="tab-2">
+        <label for="tab-3" class="text-gray-600 py-4 px-6 block ">
+          Reset Pass
+        </label>
+        <input type="radio" name="tab" id="tab-3">
+      </nav>
+      <section class="block relative z-20">
+        <div class="item" id="content-1">
+          <div class="flex justify-center align-middle p-10 ">
+            <span class="font-semibold text-2xl">Login</span>
+          </div>
+          <form class="flex flex-col gap-4">
+            <input type="text" name="" id="" placeholder="User Name *" class="border-b border-black focus:outline-none">
+            <input type="password" name="" id="" placeholder="Password *"
+              class="border-b border-black focus:outline-none">
+            <div class="flex align-middle justify-between">
+              <label for="" class="flex gap-2 font-light">
+                <input type="checkbox" name="" id="">
+                Remember me</label>
+              <a href="" class=" text-red-200 hover:text-black font-light">Lost Your password</a>
+            </div>
+            <button
+              class="relative font-normal text-lg border border-red-200 hover:bg-red-200 transition-bg duration-300 rounded-sm  py-2 w-full  after:absolute after:top-2 after:left-2 after:w-full after:h-full after:-z-10 after:bg-red-100">Login</button>
+            <div class="flex align-middle justify-between">
+              <p class="font-light">Not a remember yet?</p>
+              <a href="" class=" text-red-200 hover:text-black font-light">Register now</a>
+            </div>
+
+          </form>
+
+        </div>
+
+        <div class="item invisible" id="content-2">
+          <div class="flex justify-center align-middle p-10 ">
+            <span class="font-semibold text-2xl">Register</span>
+          </div>
+          <form class="flex flex-col gap-4">
+            <input type="text" name="" id="" placeholder="User Name *" class="border-b border-black focus:outline-none">
+            <input type="email" name="" id="" placeholder="Email *" class="border-b border-black focus:outline-none">
+            <input type="password" name="" id="" placeholder="Password *"
+              class="border-b border-black focus:outline-none">
+            <input type="password" name="" id="" placeholder="Repaat Password *"
+              class="border-b border-black focus:outline-none">
+
+            <button
+              class="relative font-normal text-lg border border-red-200 hover:bg-red-200 transition-bg duration-300 rounded-sm  py-2 w-full  after:absolute after:top-2 after:left-2 after:w-full after:h-full after:-z-10 after:bg-red-100">
+              Register
+            </button>
+          </form>
+
+        </div>
+
+        <div class="item invisible" id="content-3">
+          <div class="flex justify-center align-middle p-10 ">
+            <span class="font-light">
+              Lost your password? Please enter your username or email address. You will receive a
+              link to create a new password via email.
+            </span>
+          </div>
+          <form class="flex flex-col gap-4">
+            <input type="text" name="" id="" placeholder="User Name or Email *"
+              class="border-b border-black focus:outline-none">
+            <button
+              class="relative font-normal text-lg border border-red-200 hover:bg-red-200 transition-bg duration-300 rounded-sm  py-2 w-full  after:absolute after:top-2 after:left-2 after:w-full after:h-full after:-z-10 after:bg-red-100">
+              Reset Password
+            </button>
+          </form>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
