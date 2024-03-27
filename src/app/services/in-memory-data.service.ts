@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { Cart } from './cart';
+import { Cart } from '../interfaces/cart';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,19 @@ import { Cart } from './cart';
 export class InMemoryDataService {
 
   createDb() {
-    const cartItems:Cart[] = [];
+    const cartItems: Cart[] = [
+      {
+        id: 12,
+        product: {
+          id: 12,
+          name: "test product 01",
+          price: 99,
+          description: 'lorem sit amet',
+          quantity: 7,
+          photo: '../../assets/images/pruduct.png'
+        }
+      }
+    ];
     return { cartItems }
 
   }

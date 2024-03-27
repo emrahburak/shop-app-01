@@ -1,6 +1,6 @@
 import { Component,OnInit, Input } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import { Product } from '../product';
+import { Product } from '../interfaces/product';
 
 @Component({
   selector: 'app-product-detail',

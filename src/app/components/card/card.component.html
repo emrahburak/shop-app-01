@@ -4,7 +4,9 @@
   <div class="flex justify-between align-middle mt-5 pt-5">
     <p> {{productDetail.name}}</p>
       <!-- <span>{{ productDetail.price | currency}}</span> -->
-      <button data-hover="Add To Cart" [attr.data-price]="productDetail.price | currency "></button>
+
+      <button *ngIf="addedProduct === undefined" data-hover="Add To Cart" class="hover:shadow-lg" (click)="addToCart(productDetail)" [attr.data-price]="productDetail.price | currency "></button>
+      <button *ngIf="addedProduct !== undefined" data-hover="Go To Cart" class="hover:shadow-lg"  (click)="goToCart()" [attr.data-price]="addedProduct.price | currency "></button>
   </div>
 </div>
 

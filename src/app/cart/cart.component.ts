@@ -1,7 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
-import { CartService } from '../cart.service';
-import { Cart } from '../cart';
+import { CartService } from '../services/cart.service';
+import { Cart } from '../interfaces/cart';
 
 
 

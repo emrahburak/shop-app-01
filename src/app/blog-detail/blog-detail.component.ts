@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BlogService } from '../blog.service';
-import { Blog } from '../blog';
+import { BlogService } from '../services/blog.service';
+import { Blog } from '../interfaces/blog';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({

@@ -8,6 +8,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { BlogComponent } from './blog/blog.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path:'blog', component: BlogComponent},
   {path:'blog/:slug', component: BlogDetailComponent},
   {path:'contact-us', component: ContactUsComponent},
-  {path:'product/:slug', component: ProductDetailComponent}
+  {path:'product/:slug', component: ProductDetailComponent},
+  {path:'cart', component: CartComponent}
 ];
 
 @NgModule({

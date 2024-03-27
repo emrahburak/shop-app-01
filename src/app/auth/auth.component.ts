@@ -1,5 +1,6 @@
-import { Component,OnInit } from '@angular/core';
-import {faLock} from '@fortawesome/free-solid-svg-icons';
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-auth',
@@ -7,6 +8,10 @@ import {faLock} from '@fortawesome/free-solid-svg-icons';
   styleUrl: './auth.component.css'
 })
 export class AuthComponent {
-  faLock = faLock;
+
+  isClicked$: Observable<Boolean>
+  constructor(private store: Store<{isClicked:Boolean}>) { 
+    this.isClicked$ = this.store.select("isClicked");
+  }
 
 }

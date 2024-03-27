@@ -16,7 +16,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { CardComponent } from './card/card.component';
+import { CardComponent } from './components/card/card.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import * as $ from "jquery";
 import { MatIconModule } from '@angular/material/icon';
@@ -24,7 +24,9 @@ import { AuthComponent } from './auth/auth.component';
 import { CartComponent } from './cart/cart.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
+import { InMemoryDataService } from './services/in-memory-data.service';
+import { StoreModule } from '@ngrx/store';
+import { authReducer } from './state/auth.reducer';
 
 
 @NgModule({
@@ -54,7 +56,8 @@ import { InMemoryDataService } from './in-memory-data.service';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService,{dataEncapsulation:false}
-    )
+    ),
+    StoreModule.forRoot({isAuthClick:authReducer})
   ],
   providers: [
     provideClientHydration()
