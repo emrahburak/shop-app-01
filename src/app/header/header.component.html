@@ -14,8 +14,8 @@
     Login
   </label>
  <div class="flex flex-nowrap gap-3">
-  <fa-icon class="text-xl" [icon]="faCartShopping"></fa-icon>
-  <span class="border border-black rounded-full p-1 w-6 flex align-middle justify-center">0</span>
+  <fa-icon routerLink="/cart" class="text-xl cursor-pointer" [icon]="faCartShopping"></fa-icon>
+  <span class="border border-black rounded-full p-1 w-6 h-7 flex align-middle justify-center">{{cartItems?.length }}</span>
 </div>
 
   </div>

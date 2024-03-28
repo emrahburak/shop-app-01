@@ -1,1 +1,50 @@
-<h2>Cart</h2>
+<div class="lg:max-w-screen-sm w-full lg:ml-52 md:mx-auto sm:mx-auto md:px-6 sm:px-8 mb-10">
+  <ul class="grid grid-flow-row gap-4 overflow-auto mb-10 ">
+    <li *ngFor="let product of products" class="flex  gap-9   h-fit border-b border-gray-200 place-items-center px-1">
+      <button>
+        <fa-icon [icon]="faXmark"></fa-icon>
+      </button>
+      <img class="w-20" src="{{product.photo}}" alt="{{product.name}}">
+      <p class="flex-grow font-sans font-semibold text-base">{{product.name}}</p>
+      <span class="font-light font-sans">{{product.price | currency}}</span>
+      <div class="flex">
+        <input type="number" name="" id="qty-{{product.id}}"  value="{{product.quantity}}"
+          class="w-14 h-13 border border-gray-500 pl-3 focus:outline-0  ">
+        <!-- <div class="flex flex-col h-full">
+          <button (click)="incrementQty(product.quantity,product.id)" class="border border-gray-500 px-1 ">
+            <fa-icon [icon]="faAngleUp"></fa-icon>
+          </button>
+          <button class="border border-gray-500 px-1 ">
+            <fa-icon [icon]="faAngleDown"></fa-icon>
+          </button>
+        </div> -->
+      </div>
+      <span class="font-light font-sans">{{product.price | currency}}</span>
+    </li>
+  </ul>
+  <div class="flex align-middle justify-between mb-10">
+    <input type="text" name="" id="" placeholder="Discount Code"
+      class="border-b border-gray-200 mt-10 focus:outline-none">
+    <button class="bg-gradient-to-t from-gray-200 to-transparent rounded-sm py-0 px-4">Send Code</button>
+  </div>
+  <div class="mb-10">
+    <button class="bg-gradient-to-t from-gray-200 to-transparent rounded-sm p-4">Update Cart</button>
+  </div>
+  <div>
+    <p class="font-bold text-lg font-sans">Cart Total</p>
+    <div class="relative w-2/3 h-full  p-10 flex flex-col gap-4 rounded-md">
+      <div class="absolute  top-0 left-0 bottom-0 right-0 -z-10" style="background-color: #f9f9f7;"></div>
+      <div class="flex flex-nowrap align-middle justify-start gap-4">
+        <span class="font-semibold  font-sans">Sub Total</span>
+        <span class="font-light">{{total | currency}}</span>
+      </div>
+      <div class="flex flex-nowrap align-middle justify-between">
+        <span class="font-semibold  font-sans">Total</span>
+        <span class="font-light">{{total | currency}}</span>
+      </div>
+      <button routerLink="/checkout"
+        class="block border border-red-200 py-2 px-8  font-semibold rounded-sm  text-gray-500 relative transition-bg duration-150  hover:bg-red-200 after:absolute after:-z-10 after:top-2 after:left-2 after:w-full after:h-full after:bg-red-200 ">Checkout</button>
+    </div>
+
+  </div>
+</div>

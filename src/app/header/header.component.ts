@@ -23,9 +23,10 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-      this.cartService.getCartItems().subscribe(items => this.cartItems = items)
-      console.log(this.cartItems)
+    this.cartService.getCartItems().subscribe(items => this.cartItems = items)
+    console.log(this.cartItems)
   }
+
 
   onHederPositionChange() {
     console.log("header posisyonu değişti")

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -27,6 +28,8 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { StoreModule } from '@ngrx/store';
 import { authReducer } from './state/auth.reducer';
+import { CommonModule } from '@angular/common';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 @NgModule({
@@ -47,6 +50,7 @@ import { authReducer } from './state/auth.reducer';
     BlogDetailComponent,
     AuthComponent,
     CartComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,10 +58,13 @@ import { authReducer } from './state/auth.reducer';
     MatIconModule,
     FontAwesomeModule,
     HttpClientModule,
+    CommonModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService,{dataEncapsulation:false}
     ),
-    StoreModule.forRoot({isAuthClick:authReducer})
+    StoreModule.forRoot({isAuthClick:authReducer}),
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration()
