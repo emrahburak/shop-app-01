@@ -8,7 +8,7 @@
       <p class="flex-grow font-sans font-semibold text-base">{{product.name}}</p>
       <span class="font-light font-sans">{{product.price | currency}}</span>
       <div class="flex">
-        <input type="number" name="" id="qty-{{product.id}}"  value="{{product.quantity}}"
+        <input type="number" name="" id="qty-{{product.id}}" value="{{product.quantity}}"
           class="w-14 h-13 border border-gray-500 pl-3 focus:outline-0  ">
         <!-- <div class="flex flex-col h-full">
           <button (click)="incrementQty(product.quantity,product.id)" class="border border-gray-500 px-1 ">
@@ -31,19 +31,21 @@
     <button class="bg-gradient-to-t from-gray-200 to-transparent rounded-sm p-4">Update Cart</button>
   </div>
   <div>
-    <p class="font-bold text-lg font-sans">Cart Total</p>
-    <div class="relative w-2/3 h-full  p-10 flex flex-col gap-4 rounded-md">
+    <p class="font-bold text-lg font-sans ">Cart Total</p>
+    <div class="relative w-10/12 h-full  p-10 flex flex-col gap-8 rounded-md text-lg mt-10">
       <div class="absolute  top-0 left-0 bottom-0 right-0 -z-10" style="background-color: #f9f9f7;"></div>
       <div class="flex flex-nowrap align-middle justify-start gap-4">
         <span class="font-semibold  font-sans">Sub Total</span>
         <span class="font-light">{{total | currency}}</span>
       </div>
-      <div class="flex flex-nowrap align-middle justify-between">
-        <span class="font-semibold  font-sans">Total</span>
-        <span class="font-light">{{total | currency}}</span>
+      <div class="flex flex-nowrap align-middle justify-between font-semibold font-sans">
+        <span>Total</span>
+        <span>{{total | currency}}</span>
       </div>
       <button routerLink="/checkout"
-        class="block border border-red-200 py-2 px-8  font-semibold rounded-sm  text-gray-500 relative transition-bg duration-150  hover:bg-red-200 after:absolute after:-z-10 after:top-2 after:left-2 after:w-full after:h-full after:bg-red-200 ">Checkout</button>
+        class="block border border-red-200  py-2 px-8 font-semibold rounded-sm text-gray-600 relative after:absolute
+        after:-z-10 after:top-2 after:left-2 after:w-full after:h-full after:bg-red-200 after:hover:top-3
+        after:hover:left-3 hover:text-black after:transition-all after:duration-200 after:ease-in-out transition-all duration-200 ease-in-out">Checkout</button>
     </div>
 
   </div>

@@ -1,61 +1,91 @@
-<div class="max-w-screen-xl place-content-center mx-auto h-full">
+<div class="max-w-screen-xl place-content-center mx-auto ">
   <div class="flex align-middle justify-between p-3 border border-gray-200 mb-10">
     <button class="font-light" (click)="handleClick()">Click here to enter your discount code</button>
     <p class="font-light">Do you have a discount code</p>
   </div>
-  <div class=" h-32 mb-10">
-
-    <div id="hidden" class="transition-all duration-300 ease-in-out w-full"
+  <div class=" h-32 mb-20 ">
+    <div id="hidden" class="transition-all duration-300 ease-in-out w-full  "
       [ngClass]="toggleClass ? 'opacity-100 visible mt-10 mb-20' : 'opacity-0 invisible -mt-20'">
       <p class="font-light">If you have a coupon code, please enter below. </p>
       <input type="text" name="" id="" placeholder="Discount Code"
         class=" mt-5 mb-10 border-b border-gray-200 w-full focus:outline-none placeholder:font-semibold placeholder:font-sans">
       <button
-        class="px-20 py-2 border border-red-200 font-sans text-lg font-semibold text-gray-500 relative after:absolute after:-z-20 after:top-2 after:left-2 after:bottom-0 after:bg-red-100 after:w-full after:h-full after:hover:top-3 after:transition-all after:duration-300 after:ease-in-out">Send</button>
+        class=" px-20 py-2 border border-red-200 font-sans text-lg font-semibold text-gray-500 relative after:absolute after:-z-20 after:top-2 after:left-2 after:bottom-0 after:bg-red-100 after:w-full after:h-full after:hover:top-3 after:transition-all after:duration-300 after:ease-in-out">Send</button>
     </div>
-
-    <form action="" class=" ">
-      <div class="grid grid-cols-2 gap-2">
-        <div>
-
-          <p class="font-sans font-bold text-xl">Billing Details</p>
-          <label for="first_name">First Name*</label>
-          <input type="text" name="" id="first_name"
-            class=" mt-5 mb-10 border-b border-gray-200 w-full focus:outline-none ">
-
-          <label for="last_name">Last Name*</label>
-          <input type="text" name="" id="last_name"
-            class=" mt-5 mb-10 border-b border-gray-200 w-full focus:outline-none ">
-
-          <label for="company_name">Company Name (optional)</label>
-          <input type="text" name="" id="company_name"
-            class=" mt-5 mb-10 border-b border-gray-200 w-full focus:outline-none placeholder:font-semibold placeholder:font-sans">
-
-          <select name="" id="country"
-            class=" mt-5 mb-10 border-b border-gray-200 w-full focus:outline-none placeholder:font-semibold placeholder:font-sans">
-            <option>Turkey</option>
-          </select>
-          <label for="address-1">Adress -1</label>
-          <input type="text" name="" id="address-1"
-            class=" mt-5 mb-10 border-b border-gray-200 w-full focus:outline-none ">
-          <label for="address-2">Adress -2</label>
-          <input type="text" name="" id="" class=" mt-5 mb-10 border-b border-gray-200 w-full">
-
-
-
-        </div>
-        <div>
-
-          <p class="font-sans font-bold text-xl"> additional information</p>
-        </div>
-
-      </div>
-      <p class="font-sans font-bold text-xl">Your Order</p>
-
-
-    </form>
-
   </div>
 
+  <form action="" class="mb-20">
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+
+        <p class="font-sans font-bold text-xl">Billing Details</p>
+        <label for="first_name">First Name*</label>
+        <input type="text" name="" id="first_name"
+          class=" mt-5 mb-10 border-b border-gray-200 w-full focus:outline-none ">
+
+        <label for="last_name">Last Name*</label>
+        <input type="text" name="" id="last_name"
+          class=" mt-5 mb-10 border-b border-gray-200 w-full focus:outline-none ">
+
+        <label for="company_name">Company Name (optional)</label>
+        <input type="text" name="" id="company_name"
+          class=" mt-5 mb-10 border-b border-gray-200 w-full focus:outline-none placeholder:font-semibold placeholder:font-sans">
+
+        <select name="" id="country"
+          class=" mt-5 mb-10 border-b border-gray-200 w-full focus:outline-none placeholder:font-semibold placeholder:font-sans">
+          <option *ngFor="let country of countries" value="{{country.code}}">{{country.name}}</option>
+        </select>
+        <label for="address-1">Adress -1</label>
+        <input type="text" name="" id="address-1"
+          class=" mt-5 mb-10 border-b border-gray-200 w-full focus:outline-none ">
+        <label for="address-2">Adress -2</label>
+        <input type="text" name="" id="" class=" mt-5 mb-10 border-b border-gray-200 w-full focus:outline-none">
+        <label for="zip-code">Zip Code</label>
+        <input type="text" name="" id="zip-code" class=" mt-5 mb-10 border-b border-gray-200 w-full focus:outline-none">
+        <label for="district">District</label>
+        <input type="text" name="" id="district" class=" mt-5 mb-10 border-b border-gray-200 w-full focus:outline-none">
+        <label for="tel-no">Tel</label>
+        <input type="tel" name="" id="tel-no" class=" mt-5 mb-10 border-b border-gray-200 w-full focus:outline-none">
+        <label for="e-mail">E-Mail</label>
+        <input type="email" name="" id="e-mail" class=" mt-5 mb-10 border-b border-gray-200 w-full focus:outline-none">
+      </div>
+      <div>
+        <p class="font-sans font-bold text-xl"> additional information</p>
+        <div class="grid grid-cols-1 gap-2">
+          <span>optional</span>
+          <textarea name="" id="info" cols="30" rows="10" class="border border-gray-400 focus:outline-none placeholder:place-content-center"
+            placeholder="The special notes regarding your order."></textarea>
+        </div>
+      </div>
+
+    </div>
+    <p class="font-sans font-bold text-xl">Your Order</p>
+    <table class="w-full align-middle">
+      <thead class="p-7">
+        <tr>
+          <th class="text-left font-sans font-semibold">Product</th>
+          <th class="text-left">SubTotal</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+      <tfoot>
+        <tr>
+          <th class="text-left font-sans font-semibold py-7">SubTotal</th>
+          <th class="text-left py-8 font-light font-sans">{{0 | currency}}</th>
+        </tr>
+        <tr>
+          <th class="text-left font-sans font-semibold py-7">Total</th>
+          <th class="text-left py-8 font-light font-sans">{{0 | currency}}</th>
+        </tr>
+      </tfoot>
+    </table>
+
+    <button
+      class=" px-20 py-2 border border-red-200 font-sans text-lg font-semibold text-gray-500 relative after:absolute after:-z-20 after:top-2 after:left-2 after:bottom-0 after:bg-red-100 after:w-full after:h-full after:hover:top-3 after:transition-all after:duration-300 after:ease-in-out">Place
+      Order</button>
+
+  </form>
 
 </div>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import {Select2Module} from 'ng-select2-component';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -64,7 +65,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     ),
     StoreModule.forRoot({isAuthClick:authReducer}),
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    Select2Module
   ],
   providers: [
     provideClientHydration()
